@@ -1,0 +1,11 @@
+.header {
+    height: 85px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.header h1 {
+    padding-left: 30px;
+}
