@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Element from '../Element/Element';
 import './Accesories.css'
 import profilePicture from '../../logo/Tarik_Pic.jpg'
+import UserInfo from '../UserInfo/UserInfo';
+import AddBreak from '../AddBreak/AddBreak';
+import ExerciseDetail from '../ExerciseDetails/ExerciseDetail';
 
 const Accesories = () => {
     const [elements, setElements] = useState([]);
@@ -18,6 +21,9 @@ const Accesories = () => {
         const totalTime = newExerciseTime + exerciseTime;
         setexerciseTime(totalTime);
     }
+    const breakTime = () => {
+        let breakTime = 5;
+    }
 
     return (
         <div className='accesories-container'>
@@ -31,14 +37,21 @@ const Accesories = () => {
                 }
             </div>
             <div className="exercise-time">
-                <div className='profile'>
-                    <img src={profilePicture} alt="" />
-                    <h3>Md. Tarikul Aziz</h3>
-                </div>
-                <h4>Exersise Time: {exerciseTime}s</h4>
+                <UserInfo
+                    profilePicture={profilePicture}
+                ></UserInfo>
+                <AddBreak
+                    Accesories={Accesories}
+                ></AddBreak>
+                <ExerciseDetail
+                    exerciseTime={exerciseTime}
+                    breakTime={breakTime}
+                ></ExerciseDetail>
+                {/* <h4>Exersise Time: {exerciseTime}s</h4> */}
             </div>
         </div >
     );
 };
 
-export default Accesories;
+// export default Accesories;
+export { Accesories, breakTime }

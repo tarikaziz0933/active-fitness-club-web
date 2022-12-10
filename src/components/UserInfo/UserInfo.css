@@ -1,0 +1,23 @@
+.profile {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.personal-info {
+    display: flex;
+    background-color: aquamarine;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-info h4 {
+    margin-bottom: 0;
+}
+
+.personal-info div {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 0;
+}

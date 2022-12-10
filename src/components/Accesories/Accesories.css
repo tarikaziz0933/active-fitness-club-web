@@ -10,15 +10,14 @@
 }
 
 
-.profile {
-    display: flex;
-    margin-top: 30px;
-}
-
 .profile img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
+}
+
+.exercise-time {
+    background-color: darkseagreen;
 }
 
 @media screen and (max-width: 900px) {

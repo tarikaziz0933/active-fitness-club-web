@@ -1,0 +1,16 @@
+.break-buttons {
+    background-color: aquamarine;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.button:hover {
+    background-color: darkseagreen;
+}
