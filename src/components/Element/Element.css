@@ -1,3 +1,42 @@
 .each-element {
     width: 300px;
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 8px;
+    position: relative;
+}
+
+.each-element img {
+    width: 280px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.element-info {
+    margin-left: 10px;
+}
+
+.element-info p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.element-name {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 21px;
+}
+
+.list-button {
+    width: 100%;
+    background: skyblue;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    position: absolute;
+    bottom: 0;
+}
+
+.list-button:hover {
+    background-color: seagreen;
 }
