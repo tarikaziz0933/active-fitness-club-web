@@ -4,6 +4,7 @@
         "picture": "./images/Barbell Bench Press.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Roberson Guerra",
         "about": "Nulla cillum labore eiusmod irure amet occaecat. Veniam cupidatat ullamco do deserunt sint officia labore.\r\n"
     },
@@ -12,6 +13,7 @@
         "picture": "./images/Cable Crossover.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Kelley Blake",
         "about": "Reprehenderit dolore nostrud commodo anim qui deserunt est ad et consectetur cupidatat. Officia sunt.\r\n"
     },
@@ -20,6 +22,7 @@
         "picture": "./images/Dips.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Spence Kirk",
         "about": "Deserunt et ullamco mollit ea incididunt officia id. Incididunt tempor consequat irure ullamco laborum.\r\n"
     },
@@ -28,6 +31,7 @@
         "picture": "./images/Half-Kneeling Landmine Press.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Myrna Hood",
         "about": "Elit reprehenderit consectetur aute anim. Consectetur aliqua duis elit qui officia excepteur.\r\n"
     },
@@ -36,6 +40,7 @@
         "picture": "./images/Rear Delt Raises.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Eugenia Savage",
         "about": "Mollit nostrud eu quis esse et veniam sunt quis excepteur proident ea excepteur tempor aliquip.\r\n"
     },
@@ -44,6 +49,7 @@
         "picture": "./images/T-Bar Row.png",
         "age": "20-30",
         "time": 50,
+        "round": 0,
         "name": "Sonja Hinton",
         "about": "Qui esse sunt ad mollit enim qui consectetur duis. Nisi sit do officia duis non ad proident tempor.\r\n"
     }

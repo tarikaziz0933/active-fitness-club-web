@@ -5,7 +5,7 @@ import profilePicture from '../../logo/Tarik_Pic.jpg'
 import UserInfo from '../UserInfo/UserInfo';
 import AddBreak from '../AddBreak/AddBreak';
 import ExerciseDetail from '../ExerciseDetails/ExerciseDetail';
-import { addBreakToLocalDB, addToLocalDB } from '../Utilities';
+import { addBreakToLocalDB, addToLocalDB, getStoredTime } from '../Utilities';
 
 const Accesories = () => {
     const [elements, setElements] = useState([]);
@@ -17,9 +17,28 @@ const Accesories = () => {
             .then(res => res.json())
             .then(data => setElements(data))
     }, [])
+    // const newTime = 0;
+
+    useEffect(() => {
+        const storedTimeDB = getStoredTime();
+        let finalTime = 0;
+        // console.log(storedTimeDB);
+        for (const id in storedTimeDB) {
+            const addedElement = elements.find(element => element.id === id);
+            if (addedElement) {
+                const round = storedTimeDB[id];
+                // addedElement.round = round;
+                finalTime = finalTime + addedElement.time * round;
+
+                // console.log(addedElement);
+            }
+        }
+        setexerciseTime(finalTime);
+
+    }, [elements])
 
     const handleDashboard = (element) => {
-        addToLocalDB(element);
+        addToLocalDB(element.id);
 
         const newExerciseTime = element.time;
         const totalTime = newExerciseTime + exerciseTime;
