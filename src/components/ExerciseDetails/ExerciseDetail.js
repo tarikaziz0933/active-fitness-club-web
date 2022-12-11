@@ -2,6 +2,8 @@ import React from 'react';
 import './ExerciseDetail.css'
 
 const ExerciseDetail = (props) => {
+    console.log(props.breaktime);
+    console.log(props.exerciseTime);
     return (
         <div>
             <h2>Exercise Details</h2>

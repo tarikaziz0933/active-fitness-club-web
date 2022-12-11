@@ -10,7 +10,7 @@ const Element = (props) => {
             <div className='element-info'>
                 <h3 className='element-name'>{name}</h3>
                 <p>{about}</p>
-                <p><small>For Age: {age}</small></p>
+                <p><small>For Age: {age}yrs</small></p>
                 <p><small>Time Required: {time}s</small></p>
             </div>
             <button onClick={() => handleDashboard(props.element)} className='list-button'>

@@ -30,16 +30,26 @@ const addBreakToLocalDB = time => {
 
     const breakTimeStore = breakCount[time];
     if (breakTimeStore) {
-        // console.log(breakTimeStore);
         const newtimeStore = time;
-        breakCount[time] = newtimeStore;
-        // localStorage.setItem(element.id, newtimeStore);
+        breakCount['time'] = newtimeStore;
     }
     else {
-        breakCount[time] = time;
-        // localStorage.setItem(element.id, element.time);
+        breakCount['time'] = time;
     }
     localStorage.setItem('break-itme-count', JSON.stringify(breakCount));
+}
+
+const getBreakTime = () => {
+    let breakCount = { time: 0 };
+
+    const storedBreakTime = localStorage.getItem('break-itme-count');
+    if (storedBreakTime) {
+        breakCount = JSON.parse(storedBreakTime);
+    }
+    // else {
+    //     // 
+    // }
+    return breakCount;
 
 }
 
@@ -56,5 +66,6 @@ const getStoredTime = () => {
 export {
     addToLocalDB,
     addBreakToLocalDB,
-    getStoredTime
+    getStoredTime,
+    getBreakTime
 }

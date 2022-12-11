@@ -5,12 +5,13 @@ import profilePicture from '../../logo/Tarik_Pic.jpg'
 import UserInfo from '../UserInfo/UserInfo';
 import AddBreak from '../AddBreak/AddBreak';
 import ExerciseDetail from '../ExerciseDetails/ExerciseDetail';
-import { addBreakToLocalDB, addToLocalDB, getStoredTime } from '../Utilities';
+import { addBreakToLocalDB, addToLocalDB, getBreakTime, getStoredTime } from '../Utilities';
 
 const Accesories = () => {
     const [elements, setElements] = useState([]);
     const [exerciseTime, setexerciseTime] = useState(0);
     const [breaktime, setBreaktime] = useState(0);
+    console.log(breaktime);
 
     useEffect(() => {
         fetch('database.json')
@@ -21,21 +22,25 @@ const Accesories = () => {
 
     useEffect(() => {
         const storedTimeDB = getStoredTime();
-        let finalTime = 0;
         // console.log(storedTimeDB);
+        let finalTime = 0;
         for (const id in storedTimeDB) {
             const addedElement = elements.find(element => element.id === id);
             if (addedElement) {
                 const round = storedTimeDB[id];
-                // addedElement.round = round;
                 finalTime = finalTime + addedElement.time * round;
-
-                // console.log(addedElement);
             }
         }
         setexerciseTime(finalTime);
-
     }, [elements])
+
+    useEffect(() => {
+        const storedBreakTimeDB = getBreakTime();
+        // console.log(storedBreakTimeDB.time);
+        let finalBreakTime = storedBreakTimeDB.time;
+        setBreaktime(finalBreakTime);
+
+    }, [])
 
     const handleDashboard = (element) => {
         addToLocalDB(element.id);
@@ -44,10 +49,10 @@ const Accesories = () => {
         const totalTime = newExerciseTime + exerciseTime;
         setexerciseTime(totalTime);
     }
-    const breakTime = (time) => {
+    const hundleBreakTime = (time) => {
         addBreakToLocalDB(time);
-        let breaktime = time;
-        setBreaktime(breaktime);
+        let breaktime1 = time;
+        setBreaktime(breaktime1);
     }
 
     return (
@@ -69,7 +74,7 @@ const Accesories = () => {
                     profilePicture={profilePicture}
                 ></UserInfo>
                 <AddBreak
-                    breakTime={breakTime}
+                    hundleBreakTime={hundleBreakTime}
                 ></AddBreak>
                 <ExerciseDetail
                     exerciseTime={exerciseTime}
